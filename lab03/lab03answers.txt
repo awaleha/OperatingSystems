@@ -1,0 +1,8 @@
+CPS590 Lab03
+------------
+
+(3) In the first program, both the child and the parent getpid and getppid before any processes terminate. In the second program, the child process getsppid after it’s parent is terminated. 
+
+(4) pids2.c has a sleep in it, making sure that the parent pid terminates first, then the child pid attempts to getppid. In pid3.c, there is no sleep, so perhaps the parent will terminate first, perhaps it wont. 
+
+(5) I put the command wait(pid) in the first if statement, forcing the parent to wait until it’s child terminates, until it terminates. 

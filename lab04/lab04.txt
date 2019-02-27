@@ -1,0 +1,67 @@
+Lab04  -- do this lab the week AFTER study week. 
+
+Note: there are 3 files to submit for this lab.
+
+Type your answers to the following questions into a file named 
+lab04Answers.txt and submit it.
+Questions: 1,2
+Also submit files: 
+      clone_mpmProcess.c
+      clone_mpmThread.c
+
+
+cloneProcess.c is a program in which the main process spawns a child process.
+cloneThread.c  is a program in which the main process spawns a thread (lightweight process).
+
+Note that these programs use a file named test.file
+Make sure you have test.file in the directory from which you run the executables.
+
+
+1. Run cloneProcess
+   Your output should be (except for pids):
+       The variable was: 9
+       Part after clone has pid 10992
+       I am 10993 and my parent is 10992
+       The variable is now: 9
+       Read from the file: a
+
+   Explain why the file closure and the variable modification are not
+   recognized (variable has old value, and file still open).
+
+
+2. Run cloneThread
+   Your output should be (except for pids):
+       The variable was: 9
+       Part after clone has pid 11051
+       I am 11052 and my parent is 11051
+       The variable is now: 42
+       File Read Error: Bad file descriptor
+
+   Explain why the file closure and the variable modification ARE
+   recognized (variable has new value, and file closed).
+
+3. Copy file /usr/courses/cps590/Programs/fork_and_clone/fork_mpm.c into a file named clone_mpmProcess.c
+   Modify clone_mpmProcess.c so that it accomplishes the same thing, but by using 
+   clone instead of fork. Your output should be (except for pids):
+      > clone_mpmProcess
+   
+      This is process(thread) 11501.
+      x+y=1
+      > 
+      This is process(thread) 11502. 
+      x+y=7
+
+
+4. Copy clone_mpmProcess.c to clone_mpmThread.c and modify the latter so that
+   it spawns a thread (lightweight process) instead of a process.
+   Your output should be (except for pids):
+   > clone_mpmThread
+
+   This is process(thread) 11504.
+   x+y=1
+   > 
+   This is process(thread) 11505. 
+   x+y=8
+
+
+   
